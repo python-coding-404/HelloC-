@@ -5,7 +5,7 @@ SRCS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.cpp
 OBJS = $(patsubst %.cpp, %.o, $(SRCS))
 
 main: $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o main
+	$(CXX) $(CXXFLAGS) -static $(OBJS) -o main
 
 clean:
 	rm -f $(OBJS) main
